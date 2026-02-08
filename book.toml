@@ -1,0 +1,11 @@
+[book]
+authors = ["Yura Zatsepin"]
+language = "en"
+src = "src"
+title = "ci-without-the-overhead"
+description = "Woodpecker CI tutorial with some small real projects"
+
+[output.html]
+git-repository-url = "https://github.com/ci-without-the-overhead/ci-without-the-overhead.github.io"
+edit-url-template = "https://github.com/ci-without-the-overhead/ci-without-the-overhead.github.io/edit/master/{path}"
+no-section-label = true

@@ -1,0 +1,29 @@
+[tools]
+mdbook = "latest"
+jj = "latest"
+
+[hooks]
+enter = [
+  "echo 'Start writing...'",
+]
+
+[tasks]
+serve = "mdbook serve --port 3210"
+open = "brave-browser --app-url 'http://localhost:3210'"
+
+[tasks.zellij_bg_tasks]
+hide = true
+run = """bash -c 'zellij action new-tab --layout <(cat <<'LAYOUT'
+layout {
+	tab name="mdbook serve" {
+		pane size=1 borderless=true {
+			plugin location="compact-bar"
+		}
+		pane name="serve book" {
+			command "mise"
+			args "run" "serve"
+		}
+	}
+}
+LAYOUT
+)'"""
